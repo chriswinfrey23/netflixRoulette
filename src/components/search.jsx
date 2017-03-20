@@ -12,10 +12,14 @@ class Search extends Component {
     })
   }
 
+  handleClick = (event) => {
+    this.props.search(this.refs.search.value);
+  }
+
   render() {
 
     return (
-    <div className="container" style={{marginTop: "25px"}}>
+    <div className="container search">
       <div className="row">
         <div className="col s6 push-s2">
           <input placeholder="Enter the name of an Actor"
@@ -27,7 +31,7 @@ class Search extends Component {
                  className="validate">
           </input>
         </div>
-        <button className="btn waves-effect waves-light col s2 push-s2" type="submit" name="action">Submit</button>
+        <button className="btn waves-effect waves-light col s2 push-s2" onClick={this.handleClick} type="submit" name="action">Search</button>
       </div>
     </div>
     )

@@ -6,7 +6,7 @@ class Header extends Component {
     return (
       <nav>
         <div className="nav-wrapper z-depth-2">
-          <a href="#" className="logo"><img style={{marginLeft: "10px"}} src={logo}></img></a>
+          <a href="#" className="logo"><img alt="NetflixRoulette" style={{marginLeft: "10px"}} src={logo}></img></a>
         </div>
       </nav>
     )
