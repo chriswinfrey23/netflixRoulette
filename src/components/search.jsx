@@ -14,6 +14,9 @@ class Search extends Component {
 
   handleClick = (event) => {
     this.props.search(this.refs.search.value);
+    this.setState({
+      search: ""
+    })
   }
 
   render() {
@@ -31,7 +34,11 @@ class Search extends Component {
                  className="validate">
           </input>
         </div>
-        <button className="btn waves-effect waves-light col s2 push-s2" onClick={this.handleClick} type="submit" name="action">Search</button>
+        <button className="btn waves-effect waves-light col s2 push-s2"
+                onClick={this.handleClick}
+                type="submit"
+                name="action">Search
+       </button>
       </div>
     </div>
     )
