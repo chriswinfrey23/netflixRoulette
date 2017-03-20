@@ -1516,17 +1516,17 @@ When you build the project, Create React App will place the `public` folder cont
 2. Install `serve` by running `npm install --save serve`.
 
 3. Add this line to `scripts` in `package.json`:
-    
+
     ```
     "now-start": "serve build/",
     ```
-    
+
 4. Run `now` from your project directory. You will see a **now.sh** URL in your output like this:
-    
+
     ```
     > Ready! https://your-project-dirname-tpspyhtdtk.now.sh (copied to clipboard)
     ```
-    
+
     Paste that URL into your browser when the build is complete, and you will see your deployed app.
 
 Details are available in [this article.](https://zeit.co/blog/now-static)
@@ -1588,6 +1588,9 @@ If none of these solutions help please leave a comment [in this thread](https://
 ### `npm test` hangs on macOS Sierra
 
 If you run `npm test` and the console gets stuck after printing `react-scripts test --env=jsdom` to the console there might be a problem with your [Watchman](https://facebook.github.io/watchman/) installation as described in [facebookincubator/create-react-app#713](https://github.com/facebookincubator/create-react-app/issues/713).
+
+##Test call
+example call : 'https://community-netflix-roulette.p.mashape.com/api.php?actor=will+smith'
 
 We recommend deleting `node_modules` in your project and running `npm install` (or `yarn` if you use it) first. If it doesn't help, you can try one of the numerous workarounds mentioned in these issues:
 
