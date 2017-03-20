@@ -19,6 +19,14 @@
   margin-top: 25px;
 }
 
+.cards-container {
+  column-break-inside: avoid;
+  .card {
+    display: inline-block;
+    overflow: visible;
+  }
+}
+
 .App-header {
   background-color: #222;
   height: 150px;

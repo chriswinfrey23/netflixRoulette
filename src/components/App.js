@@ -3,13 +3,15 @@ import axios from 'axios';
 import '../assets/css/App.css';
 import Search from './search.jsx'
 import Header from './headerBar.jsx'
+import SearchResults from './SearchResults.jsx'
 
 const APIKey = 'PLI6wBNWZRmshnSPsxt4Cij1edhhp1k9PztjsnlyFoBtDwnOr6'
 
 class App extends Component {
   constructor(props){
     super(props)
-    this.state = { searchResults: {}, loading: false }
+    this.state = { searchResults: null, loading: false }
+    this.search = this.search.bind(this)
   }
 
   search(searchValue) {
@@ -18,10 +20,10 @@ class App extends Component {
     }
     let url = 'https://community-netflix-roulette.p.mashape.com/api.php?actor=' + searchValue;
     axios.get(url, config)
-      .then(function(response) {
+      .then((response) => {
         this.setState({
           searchResults : response.data
-        })
+        });
       });
   }
 
@@ -29,7 +31,8 @@ class App extends Component {
     return (
       <div>
         <Header/>
-        <Search search={this.search.bind(this)}/>
+        <Search search={this.search}/>
+        <SearchResults results={this.state.searchResults} loading={this.state.loading} />
       </div>
     );
   }
