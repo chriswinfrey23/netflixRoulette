@@ -16,18 +16,21 @@ class SearchResults extends Component {
     console.log(results);
 
     return (
-    <div className="col s8">
-      <h3 className="header flow-text">Search Results</h3>
-        <div className="row">
+    <div>
+      <h3 className="header flow-text">{"Search Results" + " for " + "'" + this.props.searchTerm + "'"}</h3>
+      <div className="row">
           { results.map((result, i) => {
             return (
-          <div className="col m4">
+          <div className="col m10">
             <div key={i} className="card horizontal z-depth-2">
               <div className="card-image">
                 <img alt="Poster" src={result.poster}></img>
               </div>
               <div className="card-content">
-                <p className="flow-text">Title: {result.show_title}</p>
+                <h3 className="flow-text"><b>{result.show_title}</b></h3>
+                <p className="flow-text">Director: {result.director}</p>
+                <p className="flow-text">Cast: {result.show_cast}</p>
+                <p className="flow-text">Summary: {result.summary}</p>
               </div>
               <div className="card-action">
               </div>
@@ -36,8 +39,8 @@ class SearchResults extends Component {
           )
         })
       }
+      </div>
     </div>
-  </div>
     )
   }
 }

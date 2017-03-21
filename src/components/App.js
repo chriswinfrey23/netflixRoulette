@@ -10,7 +10,7 @@ const APIKey = 'PLI6wBNWZRmshnSPsxt4Cij1edhhp1k9PztjsnlyFoBtDwnOr6'
 class App extends Component {
   constructor(props){
     super(props)
-    this.state = { searchResults: null, loading: false }
+    this.state = { searchResults: null, loading: false, value: "" }
     this.search = this.search.bind(this)
   }
 
@@ -22,7 +22,8 @@ class App extends Component {
     axios.get(url, config)
       .then((response) => {
         this.setState({
-          searchResults : response.data
+          searchResults : response.data,
+          value: searchValue
         });
       });
   }
@@ -32,7 +33,7 @@ class App extends Component {
       <div>
         <Header/>
         <Search search={this.search}/>
-        <SearchResults results={this.state.searchResults} loading={this.state.loading} />
+        <SearchResults searchTerm={this.state.value} results={this.state.searchResults} loading={this.state.loading} />
       </div>
     );
   }
