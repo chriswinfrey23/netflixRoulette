@@ -16,7 +16,7 @@ export default class Loader extends React.Component{
           </div>
         </div>
       </div>
-      <p>Loading Results</p>
+      <h5>Loading Results</h5>
     </div>
     )
   }

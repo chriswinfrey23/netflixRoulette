@@ -35,7 +35,7 @@ class App extends Component {
           loading: false
         });
       });
-    }, 1500)
+    }, 1000)
   }
 
   render() {
@@ -43,7 +43,7 @@ class App extends Component {
       <div>
         <Header/>
         <Search search={this.search}/>
-        { this.state.loading ? <Loader /> :
+        { this.state.loading ? <Loader searchTerm={this.state.value} /> :
         <SearchResults searchTerm={this.state.value} results={this.state.searchResults} loading={this.state.loading} /> }
       </div>
     );
