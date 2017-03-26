@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.conatiner {
+  font-family: 'Raleway', sans-serif;
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
@@ -9,6 +13,26 @@
 
 .logo {
   margin-left: 10px !important;
+}
+
+input[type=text]:focus:not([readonly]) {
+  border-bottom: 1px solid rgb(185,9,11) !important;
+  box-shadow: 0 1px 0 0 rgb(185,9,11)
+}
+
+.collection-item {
+  background-color: transparent !important;
+  border-bottom: none !important
+}
+
+.collection-header {
+  background-color: transparent !important;
+  border-bottom: none !important
+}
+
+h3.header {
+  font-size: 1.92rem !important;
+  margin-left: 2%;
 }
 
 .btn {
