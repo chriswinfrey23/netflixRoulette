@@ -24,11 +24,15 @@ class SearchResults extends Component {
           <div className="col m12">
             <div>
               <div className="col m4">
-                <img key={i} className="materialboxed" style={{height: "250px", width:"200px", marginTop: "25px"}} src={result.poster}></img>
+                <img key={i} className="materialboxed hoverable" style={{height: "250px", width:"200px", marginTop: "25px"}} src={result.poster}></img>
               </div>
               <div style={{marginTop: "1%"}} className="col m8">
                 <ul className="collection with-header">
-                  <li className="collection-header"><h4>{result.show_title}</h4></li>
+                  <li className="collection-header">
+                    <h4>{result.show_title + " " + "("+ result.release_year + ")"}
+                      <span className="right">{result.rating + "/" + "5"}</span>
+                    </h4>
+                  </li>
                   <li className="collection-item">{"Director:" + " " + result.director}</li>
                   <li className="collection-item">{"Starring:" + " " + result.show_cast}</li>
                   <li className="collection-item">{"Summary:"+ " " + result.summary}</li>

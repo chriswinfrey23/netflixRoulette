@@ -4,6 +4,8 @@ import '../assets/css/App.css';
 import Search from './search.jsx'
 import Header from './headerBar.jsx'
 import SearchResults from './SearchResults.jsx'
+import Loader from './loader.jsx'
+
 
 const APIKey = 'PLI6wBNWZRmshnSPsxt4Cij1edhhp1k9PztjsnlyFoBtDwnOr6'
 
@@ -15,17 +17,25 @@ class App extends Component {
   }
 
   search(searchValue) {
+    this.setState({
+      loading: true
+    })
+
     let config = {
       headers: { 'X-Mashape-Key': APIKey, 'Accept': 'application/json' }
     }
     let url = 'https://community-netflix-roulette.p.mashape.com/api.php?actor=' + searchValue;
+
+    setTimeout ( () => {
     axios.get(url, config)
       .then((response) => {
         this.setState({
           searchResults : response.data,
-          value: searchValue
+          value: searchValue,
+          loading: false
         });
       });
+    }, 1500)
   }
 
   render() {
@@ -33,7 +43,8 @@ class App extends Component {
       <div>
         <Header/>
         <Search search={this.search}/>
-        <SearchResults searchTerm={this.state.value} results={this.state.searchResults} loading={this.state.loading} />
+        { this.state.loading ? <Loader /> :
+        <SearchResults searchTerm={this.state.value} results={this.state.searchResults} loading={this.state.loading} /> }
       </div>
     );
   }

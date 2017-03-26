@@ -20,6 +20,22 @@ input[type=text]:focus:not([readonly]) {
   box-shadow: 0 1px 0 0 rgb(185,9,11)
 }
 
+.hoverable:hover {
+  box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),
+  0 0px 20px 5px rgba(179, 175, 175, 0.55);
+  -webkit-transition: box-shadow .75s;
+  transition: box-shadow .75s;
+}
+
+.preloader-wrapper.big {
+  width: 150px;
+  height: 150px;
+}
+
+.spinner-red-only {
+  border-color: rgb(185,9,11) !important;
+}
+
 .collection-item {
   background-color: transparent !important;
   border-bottom: none !important
@@ -28,6 +44,10 @@ input[type=text]:focus:not([readonly]) {
 .collection-header {
   background-color: transparent !important;
   border-bottom: none !important
+}
+
+.loader {
+  margin-top: 20%;
 }
 
 h3.header {
@@ -41,14 +61,6 @@ h3.header {
 
 .search {
   margin-top: 25px;
-}
-
-.cards-container {
-  column-break-inside: avoid;
-  .card {
-    display: inline-block;
-    overflow: visible;
-  }
 }
 
 .App-header {
