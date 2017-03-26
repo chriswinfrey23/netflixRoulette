@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-export default class Loader extends React.Component{
+class Loader extends React.Component{
   render() {
     return (
       <div className="center loader">
@@ -21,3 +21,5 @@ export default class Loader extends React.Component{
     )
   }
 }
+
+export default Loader;

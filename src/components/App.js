@@ -43,8 +43,8 @@ class App extends Component {
       <div>
         <Header/>
         <Search search={this.search}/>
-        { this.state.loading ? <Loader searchTerm={this.state.value} /> :
-        <SearchResults searchTerm={this.state.value} results={this.state.searchResults} loading={this.state.loading} /> }
+        { this.state.loading ? <Loader /> :
+        <SearchResults searchTerm={this.state.value} results={this.state.searchResults} /> }
       </div>
     );
   }
